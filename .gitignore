@@ -1,0 +1,5 @@
+*.DS_Store
+*.pyc
+pip-log.txt
+__pycache__
+instance

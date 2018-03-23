@@ -1,0 +1,24 @@
+# Browse CSV
+
+A little and very simple Flask app to browse the contents of a csv file. I
+developed it to read the contents of a spreadsheet (exported to csv) more
+comfortably, and to learn some Flask in the process.
+
+# What does it do?
+
+Not much. Displays the contents, let you browse sequentially through them, and
+vote the entry. In that way, you can have a summary of what entries are
+interesting to you.
+
+# Status
+
+I developed this mainly to learn, and it is bland, rough, and inefficient. It
+lacks tests and a proper setup. I might continue working on it or not.
+
+# How to run it
+
+Install the dependencies, and run `start_app.sh`. The app should be available at
+<http://localhost:5000>. Press `CTRL+C` to quit.
+
+If you run it like this, a folder named `instance` should appear with a copy of
+your data, and your decisions about the entries.

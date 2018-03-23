@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{%block app_content %}
+<h1>Entry {{ ref.entry }}/{{ ref.total_entries }}</h1>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous{% if not prev_url %} disabled{% endif %}">
+                    <a href="{{ prev_url or '#' }}">
+                        <span aria-hidden="true">&larr;</span> Previous Entry
+                    </a>
+                </li>
+                <li class="next{% if not next_url %} disabled{% endif %}">
+                    <a href="{{ next_url or '#' }}">
+                        Next Entry <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="panel panel-default">
+            {% for col_name, item_content in card.iteritems() %}
+            <div class="panel-heading">
+                <h2 class="panel-title">{{ col_name }}</h2>
+            </div>
+            <div class="panel-body">
+                <p class="text-left">{{ item_content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <h2 class="text-left">What do you think about this entry?</h2>
+        <form method="POST">
+            <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                {{ wtf.quick_form(button_form, button_map={'submit_yes': 'success',
+                                                           'submit_no': 'danger',
+                                                           'submit_na': 'warning'})
+                                                           }}
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6 col-md-4"><p></p></div>
+</div>
+<p class="text-left">
+</p>
+{% endblock %}

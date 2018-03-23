@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+        <h2>Hello!</h2>
+        {% if contents %}
+        <p class="text-left lead">Go to the <a href="{{ url_for('content', idx=0) }}">contents</a></p>
+        <p class="text-left lead">Or <a href="{{ url_for('upload') }}">upload a new file</a></p>
+        {% else %}
+        <p class="text-left lead"><a href="{{ url_for('upload') }}">Upload a file</a></p>
+        {% endif %}
+{% endblock %}

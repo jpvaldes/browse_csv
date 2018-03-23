@@ -1,0 +1,9 @@
+flask
+Flask-Bootstrap
+Flask-WTF
+itsdangerous
+jinja2
+markupsafe
+pandas
+werkzeug
+WTForms

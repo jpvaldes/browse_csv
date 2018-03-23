@@ -1,0 +1,27 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    Browse CSV
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url_for('index') }}">Browse CSV</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block app_content %}
+        {% endblock %}
+    </div>
+{% endblock %}
